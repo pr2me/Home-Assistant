@@ -14,9 +14,5 @@ Requires setup of Counter, and midnight reset automation for daily stats.
 
 [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fpr2me%2Fhome-assistant%2Fblob%2Fmain%2FBlueprints%2Fmotion_sensor_counter.yaml)
 
-## tado° Smart Heating Limiter
-If heating is manually turned up by user, amd room temperature exceeds set limits, then resume AUTO mode.
-
-[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fpr2me%2FHome-Assistant%2Fblob%2Fmain%2FBlueprints%2Ftado_smart_heating_limiter.yaml)
 ---
 ###### M. Jochems, 2024
