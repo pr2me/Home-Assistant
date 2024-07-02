@@ -1,0 +1,31 @@
+blueprint:
+  name: Motion Sensor Counter
+  description: "Increment a counter when motion is detected in the room."
+  domain: automation
+  input:
+    motion_sensor:
+      name: Motion Sensor
+      description: "Select the motion sensor for the room"
+      selector:
+        entity:
+          domain: binary_sensor
+    counter_entity:
+      name: Counter
+      description: "Select the counter to increment"
+      selector:
+        entity:
+          domain: counter
+
+trigger:
+  - platform: state
+    entity_id: !input motion_sensor
+    to: "on"
+
+condition: []
+
+action:
+  - service: counter.increment
+    target:
+      entity_id: !input counter_entity
+
+mode: single
