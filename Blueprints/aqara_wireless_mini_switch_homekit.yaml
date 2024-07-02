@@ -1,0 +1,69 @@
+blueprint:
+  name: Aqara Wireless Mini Switch via HomeKit
+  description: Control devices using Aqara Wireless Mini Switch with HomeKit integration.
+  domain: automation
+  input:
+    switch:
+      name: Aqara Wireless Mini Switch
+      description: The Aqara Wireless Mini Switch to use.
+      selector:
+        device:
+          integration: homekit_controller
+          manufacturer: Aqara
+    single_press_action:
+      name: Single Press Action
+      description: Action to perform on single press.
+      default: []
+      selector:
+        action:
+    double_press_action:
+      name: Double Press Action
+      description: Action to perform on double press.
+      default: []
+      selector:
+        action:
+    long_press_action:
+      name: Long Press Action
+      description: Action to perform on long press.
+      default: []
+      selector:
+        action:
+
+trigger:
+  - platform: device
+    device_id: !input switch
+    domain: homekit_controller
+    type: button1
+    subtype: single_press
+    id: single_press
+  - platform: device
+    device_id: !input switch
+    domain: homekit_controller
+    type: button1
+    subtype: double_press
+    id: double_press
+  - platform: device
+    device_id: !input switch
+    domain: homekit_controller
+    type: button1
+    subtype: long_press
+    id: long_press
+
+condition: []
+
+action:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: single_press
+        sequence: !input single_press_action
+      - conditions:
+          - condition: trigger
+            id: double_press
+        sequence: !input double_press_action
+      - conditions:
+          - condition: trigger
+            id: long_press
+        sequence: !input long_press_action
+
+mode: single
