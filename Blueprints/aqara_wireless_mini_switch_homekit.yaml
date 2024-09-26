@@ -29,7 +29,7 @@ blueprint:
       selector:
         action:
 
-trigger:
+triggers:
   - platform: device
     device_id: !input switch
     domain: homekit_controller
@@ -49,9 +49,9 @@ trigger:
     subtype: long_press
     id: long_press
 
-condition: []
+conditions: []
 
-action:
+actions:
   - choose:
       - conditions:
           - condition: trigger
