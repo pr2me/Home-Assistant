@@ -16,14 +16,14 @@ blueprint:
         entity:
           domain: counter
 
-trigger:
+triggers:
   - platform: state
     entity_id: !input motion_sensor
     to: "on"
 
-condition: []
+conditions: []
 
-action:
+actions:
   - service: counter.increment
     target:
       entity_id: !input counter_entity
